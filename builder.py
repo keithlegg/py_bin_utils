@@ -5,10 +5,11 @@ import struct
 
 
 
-class binary_blob(object):
+class bin_blob(object):
     def __init_(self):
         pass 
 
+    
     #def insert(self, input, num, position):
 
     #def remove(self, num, position):
@@ -16,15 +17,23 @@ class binary_blob(object):
     #def split(self, num, position):
 
 
-    def int_seq(self, size=1024):
+    def int_seq(self, start=0, size=1024):
         bdata = []
-        for b in range(size):
-            bdata.append(b)
+        if start==0:
+            for b in range(size):
+                bdata.append(b)
+        else:
+            for b in range(size):
+                bdata.append(b)
+
         return bdata  
 
     def dumpfile(self, bdata, filepath, encoding='int'):
-        # encoding 'utf-8'
-        # arr = bytearray(string, 'utf-8')
+        
+        # optional encoding ('utf-8',etc)
+        #arr = bytearray(string, 'utf-8')
+        
+        # optional header 
 
         ba = bytearray(bdata)
  
@@ -35,9 +44,12 @@ class binary_blob(object):
 
 
 
-b = binary_blob()
-seq = b.int_seq(100)
-b.dumpfile(seq, 'foo.bin')
+
+def test(filename):
+    b = bin_blob()
+    seq = b.int_seq(100)
+    b.dumpfile(seq, filename)
 
 
 
+test('foo.bin')

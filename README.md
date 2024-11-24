@@ -1,2 +1,6 @@
 # py_bin_utils
-python binary stuff
+
+
+utils to create and edit simple binary files
+
+
